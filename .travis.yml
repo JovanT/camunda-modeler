@@ -111,6 +111,9 @@ stages:
     if: type IN (cron)
   - name: "build pr"
     if: type == pull_request
+    env:
+      - PUBLISH_FOR_PULL_REQUEST=true
+      - CSC_FOR_PULL_REQUEST=true
 
 notifications:
   webhooks:
